@@ -24,12 +24,8 @@
  */
 
 /**
- * Returns an iterable that yeilds the provided value if it isn't nullable.
- *
- * @template T
- * @param {T} value
- * @returns {Generator<NonNullable<T>, void>}
+ * Returns an iterable that yields the provided value if it isn't nullable.
  */
-export function* iter(value) {
+export function* iter<T>(value: T): Generator<NonNullable<T>, void> {
   if (value != null) yield value;
 }

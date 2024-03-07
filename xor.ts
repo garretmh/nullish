@@ -19,14 +19,11 @@
  * Returns its right-hand side parameter when either its left-hand side
  * parameter is nullish or it's right-hand side parameter is nullish but not
  * both.
- *
- * @template A
- * @template B
- * @param {A} a
- * @param {B} b
- * @returns {NonNullable<A> | NonNullable<B> | undefined}
  */
-export function xor(a, b) {
+export function xor<A, B>(
+  a: A,
+  b: B,
+): NonNullable<A> | NonNullable<B> | undefined {
   if (a != null) {
     return b != null ? undefined : a;
   } else {

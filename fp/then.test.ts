@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { then } from "./then.js";
+import { then } from "./then.ts";
 
 Deno.test("then", () => {
   const id = (x: unknown) => "+" + x;

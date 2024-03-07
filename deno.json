@@ -2,13 +2,7 @@
   "name": "@garretmh/nullish",
   "version": "0.0.1",
   "exports": {
-    ".": "./mod.js",
-    "./fp": "./fp/mod.js"
-  },
-  "tasks": {
-    "dev": "deno run --watch main.ts"
-  },
-  "compilerOptions": {
-    "checkJs": true
+    ".": "./mod.ts",
+    "./fp": "./fp/mod.ts"
   }
 }

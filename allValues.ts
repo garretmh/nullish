@@ -13,13 +13,9 @@
  * ```
  */
 
-/**
- * Whether every value of the object is not nullish.
- * @template {Record<PropertyKey, unknown>} T
- * @param {T} object
- * @returns {object is import('./types.ts').RecordOfSome<T>}
- */
-export function allValues(object) {
+export function allValues<T extends Record<PropertyKey, unknown>>(
+  object: T,
+): object is FilledRecord<T> {
   for (const key in object) {
     if (Object.hasOwn(object, key) && object[key] == null) {
       return false;
@@ -27,3 +23,5 @@ export function allValues(object) {
   }
   return true;
 }
+
+type FilledRecord<T> = { [P in keyof T]: NonNullable<T[P]> };

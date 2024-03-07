@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { all } from "./all.js";
+import { all } from "./all.ts";
 
 Deno.test("all with an array", () => {
   assertEquals(all([]), true, "empty array");

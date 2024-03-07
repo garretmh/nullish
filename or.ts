@@ -4,7 +4,7 @@
  * A module providing a function that behaves like `||` for nullishness rather
  * than truthiness.
  *
- * Note: Equivalent to the nullish cocoalescing operator (`??`).
+ * Note: Equivalent to the nullish coalescing operator (`??`).
  *
  * @example
  * ```ts
@@ -21,14 +21,8 @@
  * Returns its right-hand side parameter when its left-hand side parameter is
  * null or undefined, and otherwise returns its left-hand side parameter.
  *
- * Note: Equivalent to the nullish cocoalescing operator (`??`).
- *
- * @template A
- * @template B
- * @param {A} a
- * @param {B} b
- * @returns {NonNullable<A> | B}
+ * Note: Equivalent to the nullish coalescing operator (`??`).
  */
-export function or(a, b) {
+export function or<A, B>(a: A, b: B): NonNullable<A> | B {
   return a ?? b;
 }

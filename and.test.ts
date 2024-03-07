@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { and } from "./and.js";
+import { and } from "./and.ts";
 
 Deno.test("and", () => {
   assertEquals(and("aa", "bb"), "bb");

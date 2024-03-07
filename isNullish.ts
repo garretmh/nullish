@@ -16,10 +16,7 @@
 
 /**
  * Whether the provided value is nullish.
- *
- * @param {unknown} a
- * @returns {a is null | undefined}
  */
-export function isNullish(a) {
+export function isNullish(a: unknown): a is null | undefined {
   return a == null;
 }

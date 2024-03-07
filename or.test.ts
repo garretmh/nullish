@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { or } from "./or.js";
+import { or } from "./or.ts";
 
 Deno.test("or", () => {
   assertEquals(or("aa", "bb"), "aa");

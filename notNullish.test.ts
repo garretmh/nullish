@@ -1,5 +1,5 @@
 import { assert } from "jsr:@std/assert";
-import { notNullish } from "./notNullish.js";
+import { notNullish } from "./notNullish.ts";
 
 Deno.test("notNullish", () => {
   assert(notNullish(0));

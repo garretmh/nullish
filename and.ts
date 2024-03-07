@@ -19,13 +19,7 @@
  * Returns the value of the first nullable parameter encountered when evaluating
  * from left to right, or the value of the last parameter if they are both
  * non-nullable.
- *
- * @template A
- * @template B
- * @param {A} a
- * @param {B} b
- * @returns {A | B}
  */
-export function and(a, b) {
+export function and<A, B>(a: A, b: B): A | B {
   return a == null ? a : b;
 }

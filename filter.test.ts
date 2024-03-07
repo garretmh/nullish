@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { filter } from "./filter.js";
+import { filter } from "./filter.ts";
 
 Deno.test("filter", () => {
   assertEquals(filter("aa", () => true), "aa");

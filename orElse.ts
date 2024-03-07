@@ -14,13 +14,7 @@
 
 /**
  * Returns value if it isn't nullish or else the return value of onNullish
- *
- * @template T
- * @template U
- * @param {T} value
- * @param {() => U} onNullish
- * @returns {T | U}
  */
-export function orElse(value, onNullish) {
+export function orElse<T, U>(value: T, onNullish: () => U): NonNullable<T> | U {
   return value ?? onNullish();
 }

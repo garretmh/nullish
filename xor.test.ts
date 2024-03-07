@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { xor } from "./xor.js";
+import { xor } from "./xor.ts";
 
 Deno.test("xor", () => {
   assertEquals(xor("aa", "bb"), undefined);

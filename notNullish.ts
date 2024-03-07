@@ -16,11 +16,7 @@
 
 /**
  * Whether the value isn't nullish.
- *
- * @template T
- * @param {T} a
- * @returns {a is NonNullable<T>}
  */
-export function notNullish(a) {
+export function notNullish<T>(a: T): a is NonNullable<T> {
   return a != null;
 }

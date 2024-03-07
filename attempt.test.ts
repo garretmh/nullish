@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { attempt } from "./attempt.js";
+import { attempt } from "./attempt.ts";
 
 Deno.test("attempt returns return value of callback", () => {
   const expected = Symbol();

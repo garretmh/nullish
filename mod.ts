@@ -22,15 +22,15 @@
  * ```
  */
 
-export * from "./all.js";
-export * from "./allValues.js";
-export * from "./and.js";
-export * from "./attempt.js";
-export * from "./filter.js";
-export * from "./isNullish.js";
-export * from "./iter.js";
-export * from "./notNullish.js";
-export * from "./or.js";
-export * from "./orElse.js";
-export * from "./then.js";
-export * from "./xor.js";
+export * from "./all.ts";
+export * from "./allValues.ts";
+export * from "./and.ts";
+export * from "./attempt.ts";
+export * from "./filter.ts";
+export * from "./isNullish.ts";
+export * from "./iter.ts";
+export * from "./notNullish.ts";
+export * from "./or.ts";
+export * from "./orElse.ts";
+export * from "./then.ts";
+export * from "./xor.ts";

@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { allValues } from "./allValues.js";
+import { allValues } from "./allValues.ts";
 
 Deno.test("allValues", () => {
   assertEquals(allValues({}), true);

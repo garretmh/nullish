@@ -16,30 +16,21 @@
 
 /**
  * Returns the value returned by fn or undefined if it throws.
- *
- * @template T
- * @overload
- * @param {() => T} fn
- * @returns {T | undefined}
  */
+export function attempt<T>(fn: () => T): T | undefined;
+
 /**
  * Returns the value returned by fn or the return value of onCatch if it throws.
- *
- * @template T
- * @template U
- * @overload
- * @param {() => T} fn
- * @param {((error: unknown) => U)} onCatch
- * @returns {T | U}
  */
-/**
- * @template T
- * @template [U=undefined]
- * @param {() => T} fn
- * @param {((error: unknown) => U)} [onCatch]
- * @returns {T | U | undefined}
- */
-export function attempt(fn, onCatch) {
+export function attempt<T, U>(
+  fn: () => T,
+  onCatch: (error: unknown) => U,
+): T | U;
+
+export function attempt<T, U = undefined>(
+  fn: () => T,
+  onCatch?: (error: unknown) => U,
+): T | U | undefined {
   if (typeof fn !== "function") throw new TypeError();
   try {
     return fn();
