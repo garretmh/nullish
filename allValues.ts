@@ -27,4 +27,5 @@ export function allValues<T extends Record<PropertyKey, unknown>>(
   return true;
 }
 
+/** A record with no nullable values */
 type FilledRecord<T> = { [P in keyof T]: NonNullable<T[P]> };

@@ -34,6 +34,13 @@ export function or<A, B>(a: A, b: B): NonNullable<A> | B;
  */
 export function or<const T extends unknown[]>(...values: T): T[number];
 
+/**
+ * Logical OR for nullish rather than truthy values.
+ *
+ * @returns the value of the first non-nullish parameter encountered when
+ * evaluating from left to right, or the value of the last parameter if all are
+ * nullish.
+ */
 export function or<const T extends unknown[]>(...values: T): T[number] {
   for (const value of values) {
     if (value != null) {

@@ -27,6 +27,9 @@ export function all<T extends readonly unknown[]>(
  */
 export function all<T>(values: Iterable<T>): values is Iterable<NonNullable<T>>;
 
+/**
+ * Whether all iterable items are not nullish.
+ */
 export function all<T>(
   values: Iterable<T>,
 ): values is Iterable<NonNullable<T>> {
@@ -38,5 +41,6 @@ export function all<T>(
   return true;
 }
 
+/** An array with no nullable items */
 type FilledArray<T extends readonly unknown[] | []> = T[number] extends
   NonNullable<T[number]> ? T : never;

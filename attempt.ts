@@ -27,6 +27,9 @@ export function attempt<T, U>(
   onCatch: (error: unknown) => U,
 ): T | U;
 
+/**
+ * Returns the value returned by fn or the return value of onCatch if it throws.
+ */
 export function attempt<T, U = undefined>(
   fn: () => T,
   onCatch?: (error: unknown) => U,

@@ -43,6 +43,10 @@ export function then<T, U, V = never>(
   onNullish?: () => V,
 ): U | V | undefined;
 
+/**
+ * Returns the return value of onSome when the passed value is not nullable,
+ * or the return value of onNullish if it is passed or else undefined.
+ */
 export function then<T, U, V = never>(
   value: T,
   onSome: (value: NonNullable<T>) => U,
