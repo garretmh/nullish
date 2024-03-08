@@ -1,6 +1,6 @@
 {
   "name": "@garretmh/nullish",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "exports": {
     ".": "./mod.ts",
     "./fp": "./fp/mod.ts"
