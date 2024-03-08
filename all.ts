@@ -15,10 +15,16 @@
  * ```
  */
 
+/**
+ * Whether all array items are not nullish.
+ */
 export function all<T extends readonly unknown[]>(
   values: T,
 ): values is FilledArray<T>;
 
+/**
+ * Whether all iterable items are not nullish.
+ */
 export function all<T>(values: Iterable<T>): values is Iterable<NonNullable<T>>;
 
 export function all<T>(

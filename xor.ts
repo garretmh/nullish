@@ -16,8 +16,10 @@
  */
 
 /**
- * Returns its right-hand side parameter when either its left-hand side
- * parameter is nullish or it's right-hand side parameter is nullish but not
+ * Logical XOR for nullish rather than truthy values.
+ *
+ * @returns the right-hand side parameter when either the left-hand side
+ * parameter is nullish or the right-hand side parameter is nullish but not
  * both.
  */
 export function xor<A, B>(

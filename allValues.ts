@@ -13,6 +13,9 @@
  * ```
  */
 
+/**
+ * Whether all object values are not nullish.
+ */
 export function allValues<T extends Record<PropertyKey, unknown>>(
   object: T,
 ): object is FilledRecord<T> {

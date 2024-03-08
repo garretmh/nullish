@@ -1,5 +1,5 @@
 /**
- * @module
+ * @module nullish
  *
  * A module providing all of the nullable functions in this package.
  *
