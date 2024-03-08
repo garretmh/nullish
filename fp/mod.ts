@@ -1,12 +1,11 @@
 /**
  * @module nullish
  *
- * A module providing functional versions of all of the nullable functions in
- * this package.
+ * A module providing functional versions of all of the nullable helpers.
  *
  * @example
  * ```ts
- * import * as nullish from "jsr:@garretmh/nullish";
+ * import * as nullish from "@garretmh/nullish/fp";
  *
  * nullish.all([])
  * nullish.allValues({})

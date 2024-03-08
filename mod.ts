@@ -5,7 +5,7 @@
  *
  * @example
  * ```ts
- * import * as nullish from "jsr:@garretmh/nullish";
+ * import * as nullish from "@garretmh/nullish";
  *
  * nullish.all([])
  * nullish.allValues({})
