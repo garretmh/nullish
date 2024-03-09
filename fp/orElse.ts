@@ -6,6 +6,6 @@ import { orElse as _orElse } from "../orElse.ts";
  */
 export function orElse<T, U>(
   onNullish: () => U,
-): (value: T) => NonNullable<T> | U {
+): (value: T) => T extends null | undefined ? U : T {
   return (value) => _orElse(value, onNullish);
 }

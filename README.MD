@@ -7,7 +7,7 @@ Simple helper functions for nullish values.
 Import a single helper
 
 ```ts
-import { then } from "@garretmh/nullish/then.js";
+import { andThen } from "@garretmh/nullish/andThen.js";
 ```
 
 Import all helpers when using multiple
@@ -22,7 +22,7 @@ Import a functional version of a helper (not all helpers have a functional
 variant)
 
 ```ts
-import { then } from "@garretmh/nullish/fp/then.js";
+import { andThen } from "@garretmh/nullish/fp/andThen.js";
 ```
 
 Import all helpers using functional versions of those that have them

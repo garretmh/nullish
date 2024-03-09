@@ -5,12 +5,12 @@
  *
  * @example
  * ```ts
- * import { then } from "jsr:@garretmh/nullish/then.js";
+ * import { andThen } from "jsr:@garretmh/nullish/andThen.js";
  *
- * then('ab', (x) => x + 'yz') === 'abyz'
- * then(null, (x) => x + 'yz') === undefined
- * then('ab', (x) => x + 'yz', () => 'else') === 'abyz'
- * then(null, (x) => x + 'yz', () => 'else') === 'else'
+ * andThen('ab', (x) => x + 'yz') === 'abyz'
+ * andThen(null, (x) => x + 'yz') === undefined
+ * andThen('ab', (x) => x + 'yz', () => 'else') === 'abyz'
+ * andThen(null, (x) => x + 'yz', () => 'else') === 'else'
  * ```
  */
 
@@ -18,36 +18,36 @@
  * Returns the return value of onSome when the passed value is not nullable,
  * or else undefined.
  */
-export function then<T, U>(
+export function andThen<T, U>(
   value: T,
   onSome: (value: NonNullable<T>) => U,
-): U | undefined;
+): T extends null | undefined ? undefined : U;
 
 /**
  * Returns the return value of onSome when the passed value is not nullable,
  * or else the return value of onNullish.
  */
-export function then<T, U, V>(
+export function andThen<T, U, V>(
   value: T,
   onSome: (value: NonNullable<T>) => U,
   onNullish: () => V,
-): U | V;
+): T extends null | undefined ? V : U;
 
 /**
  * Returns the return value of onSome when the passed value is not nullable,
  * or the return value of onNullish if it is passed or else undefined.
  */
-export function then<T, U, V = never>(
+export function andThen<T, U, V = never>(
   value: T,
   onSome: (value: NonNullable<T>) => U,
   onNullish?: () => V,
-): U | V | undefined;
+): T extends null | undefined ? V | undefined : U;
 
 /**
  * Returns the return value of onSome when the passed value is not nullable,
  * or the return value of onNullish if it is passed or else undefined.
  */
-export function then<T, U, V = never>(
+export function andThen<T, U, V = never>(
   value: T,
   onSome: (value: NonNullable<T>) => U,
   onNullish?: () => V,
