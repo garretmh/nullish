@@ -25,6 +25,18 @@
 export function xor<A, B>(
   a: A,
   b: B,
+): XOR<A, B>;
+
+/**
+ * Logical XOR for nullish rather than truthy values.
+ *
+ * @returns the right-hand side parameter when either the left-hand side
+ * parameter is nullish or the right-hand side parameter is nullish but not
+ * both.
+ */
+export function xor<A, B>(
+  a: A,
+  b: B,
 ): NonNullable<A> | NonNullable<B> | undefined {
   if (a != null) {
     return b != null ? undefined : a;
@@ -32,3 +44,7 @@ export function xor<A, B>(
     return b != null ? b : undefined;
   }
 }
+
+export type XOR<A, B> = A extends null | undefined
+  ? (B extends null | undefined ? undefined : B)
+  : (B extends null | undefined ? A : undefined);

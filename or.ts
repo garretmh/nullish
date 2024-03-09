@@ -15,6 +15,14 @@
  * ```
  */
 
+/** Logical OR for nullish types */
+export type Or<A, B> = A extends null | undefined ? B : A;
+
+/** Logical OR for a series of nullish types */
+export type OrMultiple<T extends unknown[]> = T extends [infer U, ...infer V]
+  ? U extends null | undefined ? V[number] extends never ? U : OrMultiple<V> : U
+  : T[number];
+
 /**
  * Logical OR for nullish rather than truthy values.
  *
@@ -23,7 +31,7 @@
  * @returns the right-hand side parameter when the left-hand side parameter is
  * null or undefined, and otherwise returns the left-hand side parameter.
  */
-export function or<A, B>(a: A, b: B): A extends null | undefined ? B : A;
+export function or<A, B>(a: A, b: B): Or<A, B>;
 
 /**
  * Logical OR for nullish rather than truthy values.
@@ -32,7 +40,7 @@ export function or<A, B>(a: A, b: B): A extends null | undefined ? B : A;
  * evaluating from left to right, or the value of the last parameter if all are
  * nullish.
  */
-export function or<const T extends unknown[]>(...values: T): DeepOr<T>;
+export function or<const T extends unknown[]>(...values: T): OrMultiple<T>;
 
 /**
  * Logical OR for nullish rather than truthy values.
@@ -49,11 +57,3 @@ export function or<const T extends unknown[]>(...values: T): T[number] {
   }
   return values.at(-1);
 }
-
-/**
- * The first non-nullish type encountered when evaluating from left to right, or
- * the last type if all are nullish.
- */
-export type DeepOr<T extends unknown[]> = T extends [infer U, ...infer V]
-  ? U extends null | undefined ? V[number] extends never ? U : DeepOr<V> : U
-  : T[number];
