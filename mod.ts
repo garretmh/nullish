@@ -36,3 +36,5 @@ export * from "./notNullish.ts";
 export * from "./or.ts";
 export * from "./orElse.ts";
 export * from "./xor.ts";
+
+export * as fp from "./fp/mod.ts";
