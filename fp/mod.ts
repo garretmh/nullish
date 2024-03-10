@@ -11,7 +11,7 @@
  * nullish.allValues({})
  * nullish.and('foo', 'bar')
  * nullish.andThen((x) => `${x} bar`)('foo')
- * nullish.attempt(() => 'foo')
+ * nullish.attempt(fnThatMightThrow)('foo')
  * nullish.filter((x) => x === 'bar')('foo')
  * nullish.isNullish('foo')
  * for (const x of nullish.iter('foo')) {}
@@ -25,12 +25,12 @@
 export * from "../all.ts";
 export * from "../allValues.ts";
 export * from "../and.ts";
-export * from "../attempt.ts";
 export * from "../isNullish.ts";
 export * from "../iter.ts";
 export * from "../notNullish.ts";
 export * from "../or.ts";
 export * from "../xor.ts";
 export * from "./andThen.ts";
+export * from "./attempt.ts";
 export * from "./filter.ts";
 export * from "./orElse.ts";

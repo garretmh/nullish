@@ -15,12 +15,13 @@
  */
 
 /**
- * Returns the value returned by fn or undefined if it throws.
+ * Call the provided function and return the result, or undefined if it throws.
  */
 export function attempt<T>(fn: () => T): T | undefined;
 
 /**
- * Returns the value returned by fn or the return value of onCatch if it throws.
+ * Call the provided function and return the result. If it throws, call the
+ * provided catch function with the thrown value and return its result
  */
 export function attempt<T, U>(
   fn: () => T,
@@ -28,7 +29,19 @@ export function attempt<T, U>(
 ): T | U;
 
 /**
- * Returns the value returned by fn or the return value of onCatch if it throws.
+ * Call the provided function and return the result. If it throws and a catch
+ * function was provided, call the catch function with the thrown value and
+ * return the result, otherwise return undefined.
+ */
+export function attempt<T, U, Args extends unknown[] = []>(
+  fn: (...args: Args) => T,
+  onCatch?: (error: unknown) => U,
+): (...args: Args) => T | U | unknown;
+
+/**
+ * Call the provided function and return the result. If it throws and a catch
+ * function was provided, call the catch function with the thrown value and
+ * return the result, otherwise return undefined.
  */
 export function attempt<T, U = undefined>(
   fn: () => T,
